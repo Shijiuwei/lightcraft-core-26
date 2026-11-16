@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lightcraft-core-26</title>
+  <subtitle>Official architecture documentation and production specifications for lightcraft-core-26</subtitle>
+  <link href="https://Shijiuwei.github.io/lightcraft-core-26/feed.xml" rel="self"/>
+  <id>https://Shijiuwei.github.io/lightcraft-core-26/</id>
+  <updated>2026-11-16T19:36:52.465821+00:00</updated>
+  <entry>
+    <title>AI masks (Object and Describe)</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/ai-masks.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/ai-masks.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>LightCraft selects objects with SAM 3 (Segment Anything with Concepts, Meta 2025), run in</summary>
+  </entry>
+  <entry>
+    <title>Architecture</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/architecture.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/architecture.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>How LightCraft is built today. The longer design document (plan/architecture.md) is local-only</summary>
+  </entry>
+  <entry>
+    <title>Long-running tasks and the activity stack</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/background-tasks.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/background-tasks.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>Everything that takes a while runs off the UI thread and shows up in one place: the activity stack in the</summary>
+  </entry>
+  <entry>
+    <title>Sony ARW, Nikon NEF, Panasonic RW2, Fujifilm RAF, Canon CR3/CR2, Pentax PEF, Samsung SRW a</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/camera-preview-colour.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/camera-preview-colour.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>ARW, NEF, RW2, RAF, CR3, CR2, PEF, SRW and ORF decoding supply sensor data and camera white-balance multipliers, but currently no measure...</summary>
+  </entry>
+  <entry>
+    <title>Contributors in the About window</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/contributors.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/contributors.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>About ▸ Contributors credits everyone who contributed to LightCraft, and About ▸ Models credits</summary>
+  </entry>
+  <entry>
+    <title>Control protocol</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/control-protocol.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/control-protocol.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>lightcraft --control 7980 (or LIGHTCRAFT_CONTROL_PORT=7980) starts a JSON-lines server on</summary>
+  </entry>
+  <entry>
+    <title>Canon CR3 decoding</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/cr3.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/cr3.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>The CR3 adapter reads the CRX Bayer track, CMP1 compression descriptor,</summary>
+  </entry>
+  <entry>
+    <title>AI Denoise</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/denoise.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/denoise.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>Edit ▸ Detail ▸ AI Denoise is a per-photo switch above Amount (0–100).</summary>
+  </entry>
+  <entry>
+    <title>Display (monitor) profiles</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/display-profiles.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/display-profiles.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>LightCraft can show photos through the monitor&#39;s ICC profile, so colours are right on wide-gamut and calibrated</summary>
+  </entry>
+  <entry>
+    <title>Faces</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/faces.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/faces.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>LightCraft reads the face names other apps (Lightroom, digiKam…) write into your photos, shows them in the loupe</summary>
+  </entry>
+  <entry>
+    <title>File format parity</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/file-format-parity.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/file-format-parity.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>Every format Lightroom reads or writes, with our support, fidelity and tests. Camera raw formats are</summary>
+  </entry>
+  <entry>
+    <title>Gaps: where LightCraft falls short of Lightroom</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/gaps.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/gaps.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>Every known shortfall, one entry each, ranked by user impact (how many Lightroom users hit it, and</summary>
+  </entry>
+  <entry>
+    <title>GPU develop pipeline (M5.2)</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/gpu-pipeline.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/gpu-pipeline.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>The CPU pipeline (crates/pipeline) is the reference (&quot;oracle&quot;). lightcraft-gpu (crates/gpu, L3)</summary>
+  </entry>
+  <entry>
+    <title>Hardware parity</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/hardware-parity.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/hardware-parity.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>What Lightroom does with the machine&#39;s hardware, per platform, and what LightCraft does. Sources:</summary>
+  </entry>
+  <entry>
+    <title>Library ratings, labels and flags</title>
+    <link href="https://Shijiuwei.github.io/lightcraft-core-26/docs/library-shortcuts.html"/>
+    <id>https://Shijiuwei.github.io/lightcraft-core-26/docs/library-shortcuts.html</id>
+    <updated>2026-11-16T19:36:52.465821+00:00</updated>
+    <summary>Select photos in Photo Grid or Square Grid, then use:</summary>
+  </entry>
+</feed>

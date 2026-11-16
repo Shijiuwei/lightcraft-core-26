@@ -1,1146 +1,333 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>文档归档菜单 - lightcraft-mirror-764 技术白皮书与规约清单</title>
-  <meta name="description" content="High availability mirror and network topology specifications for lightcraft-mirror-764">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-      :root {
-        --color-primary: #2563eb;
-        --color-primary-hover: #1d4ed8;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.68;
-        color: #1e293b;
-      }
-      .markdown-body {
-        color: #1e293b;
-      }
-      .markdown-body h1 {
-        font-size: 2.25rem;
-        font-weight: 800;
-        margin-top: 1.8rem;
-        margin-bottom: 1rem;
-        padding-bottom: 0.6rem;
-        border-bottom: 2px solid #e2e8f0;
-        color: #0f172a;
-        line-height: 1.25;
-      }
-      .markdown-body h2 {
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin-top: 1.6rem;
-        margin-bottom: 0.8rem;
-        padding-bottom: 0.4rem;
-        border-bottom: 1px solid #f1f5f9;
-        color: #1e293b;
-      }
-      .markdown-body h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-top: 1.3rem;
-        margin-bottom: 0.6rem;
-        color: #334155;
-      }
-      .markdown-body p {
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-        line-height: 1.7;
-      }
-      .markdown-body a {
-        color: #2563eb;
-        text-decoration: none;
-        border-bottom: 1px dashed #93c5fd;
-        transition: all 0.2s ease;
-      }
-      .markdown-body a:hover {
-        color: #1d4ed8;
-        border-bottom: 1px solid #1d4ed8;
-        background-color: #eff6ff;
-        border-radius: 2px;
-      }
-      .markdown-body ul, .markdown-body ol {
-        padding-left: 1.5rem;
-        margin-top: 0.6rem;
-        margin-bottom: 0.6rem;
-      }
-      .markdown-body ul {
-        list-style-type: disc;
-      }
-      .markdown-body ol {
-        list-style-type: decimal;
-      }
-      .markdown-body li {
-        margin-top: 0.25rem;
-        margin-bottom: 0.25rem;
-      }
-      .markdown-body pre {
-        background-color: #0f172a;
-        color: #e2e8f0;
-        padding: 1rem 1.2rem;
-        border-radius: 0.75rem;
-        overflow-x: auto;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 0.875rem;
-        margin: 1rem 0;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      }
-      .markdown-body code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-        font-size: 0.875em;
-        padding: 0.15rem 0.35rem;
-        background-color: #f1f5f9;
-        color: #0f172a;
-        border-radius: 0.35rem;
-        border: 1px solid #e2e8f0;
-      }
-      .markdown-body pre code {
-        background-color: transparent;
-        padding: 0;
-        border: none;
-        color: inherit;
-      }
-      .markdown-body blockquote {
-        margin: 1rem 0;
-        padding: 0.75rem 1.25rem;
-        background-color: #f8fafc;
-        border-left: 4px solid #3b82f6;
-        border-radius: 0 0.5rem 0.5rem 0;
-        color: #475569;
-      }
-      .markdown-body table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 1.2rem 0;
-        display: block;
-        overflow-x: auto;
-      }
-      .markdown-body th, .markdown-body td {
-        border: 1px solid #cbd5e1;
-        padding: 0.6rem 1rem;
-        text-align: left;
-      }
-      .markdown-body th {
-        background-color: #f1f5f9;
-        font-weight: 600;
-      }
-      .markdown-body tr:nth-child(even) {
-        background-color: #f8fafc;
-      }
-      .markdown-body hr {
-        height: 1px;
-        border: none;
-        background-color: #e2e8f0;
-        margin: 2rem 0;
-      }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documentation Catalog — lightcraft-core-26</title>
+<meta property="og:type" content="website">
+<meta name="generator" content="Editorial Press Engine">
+<meta name="description" content="Official architecture documentation and production specifications for lightcraft-core-26">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:title" content="Documentation Catalog — lightcraft-core-26">
+<meta property="og:description" content="Official architecture documentation and production specifications for lightcraft-core-26">
+<link rel="canonical" href="https://Shijiuwei.github.io/lightcraft-core-26/">
+<link rel="alternate" type="application/atom+xml" title="Documentation Feed" href="../feed.xml">
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "author": {
+    "@type": "Organization",
+    "name": "lightcraft-core-26"
+  },
+  "description": "Official architecture documentation and production specifications for lightcraft-core-26",
+  "headline": "Documentation Catalog — lightcraft-core-26",
+  "inLanguage": "en",
+  "keywords": "",
+  "name": "Documentation Catalog — lightcraft-core-26",
+  "url": "https://Shijiuwei.github.io/lightcraft-core-26/"
+}</script>
+<link rel="stylesheet" href="../assets/layout-e3828d.css">
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
-  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <a href="../index.html" class="flex items-center gap-2 group">
-        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-white font-bold text-sm shadow-sm group-hover:scale-105 transition-transform ">LM</span>
-        <span class="font-bold text-slate-900 tracking-tight text-lg group-hover:text-blue-600 transition-colors ">lightcraft-mirror-764</span>
-      </a>
-      <span class="hidden md:inline-block text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-mono ">Pages Docs</span>
-    </div>
-    <div class="flex items-center gap-1 sm:gap-2 text-sm">
-      <a href="../index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-slate-600 hover:text-blue-600 hover:bg-slate-50 font-medium ">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-        <span>首页 (README)</span>
-      </a>
-      <a href="./index.html" class="px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 text-blue-600 bg-blue-50 font-semibold ">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-        <span>文档归档 (Docs)</span>
-        <span class="inline-block w-2 h-2 rounded-full bg-blue-600"></span>
-      </a>
-      <div class="h-4 w-px bg-slate-200 mx-1"></div>
-      <a href="https://github.com/shijiuwei/lightcraft-mirror-764" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        <span class="hidden sm:inline">GitHub</span>
-      </a>
-      <a href="https://github.com/shijiuwei/lightcraft-mirror-764/wiki" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-1.5 ">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span class="hidden sm:inline">Wiki</span>
-      </a>
-    </div>
-  </div>
+<body>
+<header class="spec-238-sw-top">
+<div class="spec-238-wrap spec-238-sw-topin">
+<a class="spec-238-brand" href="../index.html"><span class="spec-238-mark">LC</span><span>lightcraft-core-26</span></a>
+<nav class="spec-238-navlinks">
+<a href="../index.html" class="">Portal</a>
+<a href="../docs/index.html" class="spec-238-active">Manual</a>
+<a href="../docs/specifications.html" class="">API & Specs</a>
+<a href="https://github.com/Shijiuwei/lightcraft-core-26" target="_blank" rel="noopener">Upstream</a>
 </nav>
-
-  <!-- Header & 面包屑 -->
-  <header class="bg-white border-b border-slate-200 py-10 px-4 sm:px-6">
-    <div class="max-w-6xl mx-auto">
-      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-3 font-medium">
-        <a href="../index.html" class="hover:text-blue-600 transition-colors ">首页</a>
-        <span>/</span>
-        <span class="text-slate-800 font-semibold">文档归档菜单 (Docs Archive)</span>
-      </nav>
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div>
-          <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-            <span>📚 项目文档归档菜单</span>
-            <span class="text-xs bg-blue-100 text-blue-800 font-normal px-2.5 py-1 rounded-full font-mono ">43 篇 Markdown 生产文档</span>
-          </h1>
-          <p class="mt-2 text-slate-600 text-base max-w-3xl">
-            本栏目归档了 <strong class="text-slate-800">lightcraft-mirror-764</strong> 项目下所有由 Markdown 文档静态编译生成的独立 Page 页面，包含系统架构设计、协议白皮书与接入指南。
-          </p>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="../index.html" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-medium transition-colors flex items-center gap-1.5 ">
-            <span>&larr; 返回项目 README 首页</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- 归档文档卡片列表 -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 w-full space-y-12">
-    <section>
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
-          <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          <span>已生产的 Page 文档清单</span>
-        </h2>
-        <span class="text-xs text-slate-500">点击卡片可查阅对应的静态 HTML 详情页</span>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">65798 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./ai-masks.html">AI masks (Object and Describe)</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft selects objects with SAM 3 Segment Anything with Concepts, Meta 2025, run in</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: ai-masks.md</span>
-    <a href="./ai-masks.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">架构设计</span>
-      <span class="text-xs text-slate-400 font-mono ">50345 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./architecture.html">Architecture</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created from the code; the full design notes stay in the local plan/architecture.md · Targe...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: architecture.md</span>
-    <a href="./architecture.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">58531 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./background-tasks.html">Long-running tasks and the activity stack</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Everything that takes a while runs off the UI thread and shows up in one place: the activity stack in the</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: background-tasks.md</span>
-    <a href="./background-tasks.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">120334 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./camera-preview-colour.html">Sony ARW, Nikon NEF, Panasonic RW2, Fujifilm RAF, Canon CR3/CR2, Pentax PEF, Samsung SRW and Olympus ORF starting look</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">ARW, NEF, RW2, RAF, CR3, CR2, PEF, SRW and ORF decoding supply sensor data and camera white-balance multipliers, but currently no measured camera colour matrix....</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: camera-preview-colour.md</span>
-    <a href="./camera-preview-colour.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">54499 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./contributors.html">Contributors in the About window</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">the AI models named in Co-Authored-By trailers. This follows the shared craftrules standard</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: contributors.md</span>
-    <a href="./contributors.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">63334 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./control-protocol.html">Control protocol</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">lightcraft --control 7980 or LIGHTCRAFT_CONTROL_PORT=7980 starts a JSON-lines server on</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: control-protocol.md</span>
-    <a href="./control-protocol.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">52948 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./cr3.html">Canon CR3 decoding</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">The CR3 adapter reads the CRX Bayer track, CMP1 compression descriptor,</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: cr3.md</span>
-    <a href="./cr3.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">53987 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./denoise.html">AI Denoise</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Edit ▸ Detail ▸ AI Denoise is a per-photo switch above Amount 0–100.</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: denoise.md</span>
-    <a href="./denoise.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">52286 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./display-profiles.html">Display (monitor) profiles</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft can show photos through the monitor's ICC profile, so colours are right on wide-gamut and calibrated</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: display-profiles.md</span>
-    <a href="./display-profiles.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">68590 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./faces.html">Faces</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft reads the face names other apps Lightroom, digiKam… write into your photos, shows them in the loupe</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: faces.md</span>
-    <a href="./faces.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">52768 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./file-format-parity.html">File format parity</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created; formats measured from the code and the target's Info.plist · Target: Adobe Lightro...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: file-format-parity.md</span>
-    <a href="./file-format-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">66562 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./gaps.html">Gaps: where LightCraft falls short of Lightroom</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created; absorbs the checklist's Top gaps and the ROADMAP's honest assessment, re-ranked af...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: gaps.md</span>
-    <a href="./gaps.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">72860 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./gpu-pipeline.html">GPU develop pipeline (M5.2)</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">The CPU pipeline crates/pipeline is the reference "oracle". lightcraft-gpu crates/gpu, L3</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: gpu-pipeline.md</span>
-    <a href="./gpu-pipeline.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">50394 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./hardware-parity.html">Hardware parity</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created from the code, gpu-pipeline.md and the parity checklist · Target: Adobe Lightroom C...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: hardware-parity.md</span>
-    <a href="./hardware-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">55286 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./library-shortcuts.html">Library ratings, labels and flags</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Select photos in Photo Grid or Square Grid, then use:</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: library-shortcuts.md</span>
-    <a href="./library-shortcuts.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">56073 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./lightroom-catalog-import.html">Lightroom Classic catalog import</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">File → Import Lightroom Catalog… opens .lrcat directly. Lightroom, Python, DNG conversion</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: lightroom-catalog-import.md</span>
-    <a href="./lightroom-catalog-import.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">50459 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-de.html">LightCraft auf Deutsch</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Wähle Bearbeiten → Sprache → Deutsch oder Einstellungen → Allgemein → Sprache.</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-de.md</span>
-    <a href="./localization-de.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">50423 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-es.html">LightCraft en español</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Elegir Editar → Idioma → Español o Ajustes → General → Idioma. El cambio se aplica al</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-es.md</span>
-    <a href="./localization-es.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">47800 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-ja.html">LightCraft 日本語表示</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft は日本語・簡体字中国語・英語（English）の表示に対応しています。</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-ja.md</span>
-    <a href="./localization-ja.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">54682 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-parity.html">Localization parity</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major first per-language measurement from the catalogs · Target: Adobe Lightroom Classic 15.5 / L...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-parity.md</span>
-    <a href="./localization-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">53897 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-pt-br.html">LightCraft em português do Brasil</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">O LightCraft pode ser exibido em inglês, chinês simplificado, chinês tradicional Taiwan, japonês e</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-pt-br.md</span>
-    <a href="./localization-pt-br.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">49208 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-ru.html">LightCraft на русском</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Выберите Правка → Язык → Русский или Настройки → Общие → Язык. Выбор применяется сразу</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-ru.md</span>
-    <a href="./localization-ru.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">48189 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-zh-hans.html">LightCraft 简体中文界面</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft 的界面支持英语、简体中文、繁体中文（台湾）和日语。语言设置保存在 ui.json 的 language 字段中。</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-zh-hans.md</span>
-    <a href="./localization-zh-hans.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">49462 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization-zh-hant.html">LightCraft 繁體中文（台灣）介面</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">從「編輯 → 語言 → 繁體中文（台灣）」切換，或開啟「設定 → 一般 → 語言」選擇。</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization-zh-hant.md</span>
-    <a href="./localization-zh-hant.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">52198 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./localization.html">Localization</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">The interface ships in the language it is written in English plus every language in the table in</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: localization.md</span>
-    <a href="./localization.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">66110 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./mcp.html">LightCraft MCP server</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">lightcraft-cli mcp exposes LightCraft to AI agents through the</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: mcp.md</span>
-    <a href="./mcp.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">58496 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./merge.html">Photo Merge (HDR, Panorama, HDR Panorama)</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">crates/merge layer L3, no UI dependencies implements the algorithms; crates/engine/src/merge.rs</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: merge.md</span>
-    <a href="./merge.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">210851 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./parity-checklist.html">Lightroom parity checklist</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: minor renamed from parity.md; Top gaps moved to gaps.md, shortcut notes to ui-parity.md · Target:...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: parity-checklist.md</span>
-    <a href="./parity-checklist.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">51804 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./process-versions.html">Process versions</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Every photo's develop settings record the rendering process they are interpreted by</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: process-versions.md</span>
-    <a href="./process-versions.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">55787 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./raf-compression.html">Fujifilm compressed RAF</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft decodes uncompressed, lossless compressed and lossy compressed RAF sensor data in pure Rust. The shared RAW decoder serves import, desktop previews, ...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: raf-compression.md</span>
-    <a href="./raf-compression.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">80348 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./raw-parity.html">RAW parity: cameras, formats, demosaic, colour and lens profiles</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major model-by-model measurement against Adobe's published camera list; use-weighted coverage; va...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: raw-parity.md</span>
-    <a href="./raw-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">53588 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./releasing.html">Releasing LightCraft</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">The release pipeline is .github/workflows/release.yml../.github/workflows/release.yml.</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: releasing.md</span>
-    <a href="./releasing.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">68250 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./roadmap.html">Roadmap: milestones, current focus and what's next</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created; milestones moved here from ROADMAP.md, focus re-ranked after the 2026-10-10 re-mea...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: roadmap.md</span>
-    <a href="./roadmap.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">61589 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./sony-lens-corrections.html">Sony embedded distortion corrections</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft reads the signed 16-sample distortion table in the raw image IFD 0x7037 of</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: sony-lens-corrections.md</span>
-    <a href="./sony-lens-corrections.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术规约</span>
-      <span class="text-xs text-slate-400 font-mono ">44294 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./specifications.html">lightcraft-mirror-764 核心通信协议与数据同步技术规范</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">本规范定义了 lightcraft-mirror-764 集群各节点间的数据传输封装格式、会话保活心跳与反指纹安全规约。</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: specifications.md</span>
-    <a href="./specifications.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">78972 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./target-app-parity.html">Target-app parity: LightCraft vs Adobe Lightroom</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major full re-measure against Lightroom Classic 15.5 and the installed Lightroom 9.6; merged ROAD...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: target-app-parity.md</span>
-    <a href="./target-app-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">50754 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./tint-direction.html">Global Tint direction</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Negative left Tint adds green; positive right adds magenta, as the slider's track shows and as in Lightroom and the DNG specification issue #188. It is a global...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: tint-direction.md</span>
-    <a href="./tint-direction.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">接入指南</span>
-      <span class="text-xs text-slate-400 font-mono ">44764 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./topology-guide.html">lightcraft-mirror-764 全息索引网络与搜索引擎感知接入指南</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">面向开发者与网络调度代理的全面接入指导手册，助力快速完成镜像部署与蜘蛛池索引接入。</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: topology-guide.md</span>
-    <a href="./topology-guide.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">51971 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./ui-parity.html">UI parity</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Last reviewed: 2026-10-10 · Last updated: 2026-10-10 · Change: major created; shortcut notes moved here from the checklist · Target: Adobe Lightroom Classic 15....</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: ui-parity.md</span>
-    <a href="./ui-parity.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">51830 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./vertical-watermarks.html">Vertical text watermarks</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">Set watermark.vertical to true in export options, or choose Vertical in the export dialog. Text runs down each column; a newline starts the next column to its l...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: vertical-watermarks.md</span>
-    <a href="./vertical-watermarks.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">61954 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./web.html">LightCraft in the browser</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">apps/lightcraft-web runs the same egui UI as the desktop app crates/ui-egui in the browser,</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: web.md</span>
-    <a href="./web.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">91446 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./whats-new.html">What's new in LightCraft</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">folder scans, exports and the contact sheet PDF, Synchronize Folder, Build / Smart Previews, Lightroom catalog import, Photo Merge, model downloads, the face sc...</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: whats-new.md</span>
-    <a href="./whats-new.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
-</div><div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group ">
-  <div>
-    <div class="flex items-center justify-between gap-2 mb-3">
-      <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">技术文档</span>
-      <span class="text-xs text-slate-400 font-mono ">70957 字</span>
-    </div>
-    <h3 class="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2 leading-snug ">
-      <a href="./xmp-interop.html">XMP sidecars and interchange</a>
-    </h3>
-    <p class="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">LightCraft keeps its catalog as the source of truth, and can also store each photo's metadata and develop settings in</p>
-  </div>
-  <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-    <span class="text-xs text-slate-400 font-mono ">源文件: xmp-interop.md</span>
-    <a href="./xmp-interop.html" class="inline-flex items-center gap-1 text-sm font-semibold text-blue-600 hover:text-blue-700 group-hover:translate-x-0.5 transition-transform ">
-      <span>查阅文档页面</span>
-      <span>&rarr;</span>
-    </a>
-  </div>
 </div>
-      </div>
-    </section>
+</header>
+<div class="spec-238-wrap">
+<div class="spec-238-sw-grid">
+<aside class="spec-238-sw-rail">
+<div style="font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;">00 / INDEX</div>
+<a href="../index.html">Portal</a>
+<a href="../docs/index.html" class="spec-238-active">Manual</a>
+<a href="../docs/ai-masks.html">1. AI masks (Object and Describe)</a>
+<a href="../docs/architecture.html">2. Architecture</a>
+<a href="../docs/background-tasks.html">3. Long-running tasks and the activity stack</a>
+<a href="../docs/camera-preview-colour.html">4. Sony ARW, Nikon NEF, Panasonic RW2, Fujifilm RAF, Canon CR3/CR2, Pentax PEF, Samsung SRW a</a>
+<a href="../docs/contributors.html">5. Contributors in the About window</a>
+<a href="../docs/control-protocol.html">6. Control protocol</a>
+<a href="../docs/cr3.html">7. Canon CR3 decoding</a>
+<a href="../docs/denoise.html">8. AI Denoise</a>
+<a href="../docs/display-profiles.html">9. Display (monitor) profiles</a>
+<a href="../docs/faces.html">10. Faces</a>
+<a href="../docs/file-format-parity.html">11. File format parity</a>
+<a href="../docs/gaps.html">12. Gaps: where LightCraft falls short of Lightroom</a>
+<a href="../docs/gpu-pipeline.html">13. GPU develop pipeline (M5.2)</a>
+<a href="../docs/hardware-parity.html">14. Hardware parity</a>
+<a href="../docs/library-shortcuts.html">15. Library ratings, labels and flags</a>
+<a href="../docs/lightroom-catalog-import.html">16. Lightroom Classic catalog import</a>
+<a href="../docs/localization-de.html">17. LightCraft auf Deutsch</a>
+<a href="../docs/localization-es.html">18. LightCraft en español</a>
+<a href="../docs/localization-ja.html">19. LightCraft 日本語表示</a>
+<a href="../docs/localization-parity.html">20. Localization parity</a>
+<a href="../docs/localization-pt-br.html">21. LightCraft em português do Brasil</a>
+<a href="../docs/localization-ru.html">22. LightCraft на русском</a>
+<a href="../docs/localization-zh-hans.html">23. LightCraft 简体中文界面</a>
+<a href="../docs/localization-zh-hant.html">24. LightCraft 繁體中文（台灣）介面</a>
+<a href="../docs/localization.html">25. Localization</a>
+<a href="../docs/mcp.html">26. LightCraft MCP server</a>
+<a href="../docs/merge.html">27. Photo Merge (HDR, Panorama, HDR Panorama)</a>
+<a href="../docs/parity-checklist.html">28. Lightroom parity checklist</a>
+<a href="../docs/process-versions.html">29. Process versions</a>
+<a href="../docs/raf-compression.html">30. Fujifilm compressed RAF</a>
+<a href="../docs/raw-parity.html">31. RAW parity: cameras, formats, demosaic, colour and lens profiles</a>
+<a href="../docs/releasing.html">32. Releasing LightCraft</a>
+<a href="../docs/roadmap.html">33. Roadmap: milestones, current focus and what&#39;s next</a>
+<a href="../docs/sony-lens-corrections.html">34. Sony embedded distortion corrections</a>
+<a href="../docs/specifications.html">35. lightcraft-mirror-764 核心通信协议与数据同步技术规范</a>
+<a href="../docs/specs-update-v1.html">36. lightcraft-mirror-764 架构升级与技术规约 (v1)</a>
+<a href="../docs/specs-update-v2.html">37. lightcraft-mirror-764 架构升级与技术规约 (v2)</a>
+<a href="../docs/specs-update-v3.html">38. lightcraft-mirror-764 架构升级与技术规约 (v3)</a>
+<a href="../docs/specs-update-v4.html">39. lightcraft-mirror-764 架构升级与技术规约 (v4)</a>
+<a href="../docs/specs-update-v5.html">40. lightcraft-mirror-764 架构升级与技术规约 (v5)</a>
+<a href="../docs/specs-update-v6.html">41. lightcraft-mirror-764 架构升级与技术规约 (v6)</a>
+<a href="../docs/specs-update-v7.html">42. lightcraft-mirror-764 架构升级与技术规约 (v7)</a>
+<a href="../docs/specs-update-v8.html">43. lightcraft-mirror-764 架构升级与技术规约 (v8)</a>
+<a href="../docs/target-app-parity.html">44. Target-app parity: LightCraft vs Adobe Lightroom</a>
+<a href="../docs/tint-direction.html">45. Global Tint direction</a>
+<a href="../docs/topology-guide.html">46. lightcraft-mirror-764 全息索引网络与搜索引擎感知接入指南</a>
+<a href="../docs/ui-parity.html">47. UI parity</a>
+<a href="../docs/vertical-watermarks.html">48. Vertical text watermarks</a>
+<a href="../docs/web.html">49. LightCraft in the browser</a>
+<a href="../docs/whats-new.html">50. What&#39;s new in LightCraft</a>
+<a href="../docs/xmp-interop.html">51. XMP sidecars and interchange</a>
 
-    <!-- 底部网络拓扑索引清单 -->
-    <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200">
-      <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
-        <div>
-          <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-            <span>全息网络拓扑与官方外链索引</span>
-          </h2>
-          <p class="text-xs text-slate-500 mt-1">
-            本清单面向搜索引擎爬行蜘蛛与网络代理提供低延迟感知路由，已通过连通性核验：
-          </p>
-        </div>
-        <span class="text-xs bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full font-mono font-medium ">全节点正常</span>
-      </div>
-      <ul class="divide-y divide-slate-100">
-        <li class="py-2 flex items-center justify-between">
-  <a href="https://api.pvucttcv.cn/yinyue/innovation-37390655.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#01</span>
-    <span class="truncate">lightcraft-mirror-764 分布式数据通道与 lightcraft 技术规范 (Spec-v1.8)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://ankmz.cn/anquan/tag-68558329.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#02</span>
-    <span class="truncate">lightcraft-mirror-764 vs 业界主流方案：智能Agent协作拓扑 深度技术选型对比</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.poykq.cn/redian/tutorial-673489.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#03</span>
-    <span class="truncate">【镜像入口】lightcraft-mirror-764 官方毫秒级实时数据广播节点</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://rexe.wtpuscm.cn/yinqing/webinar-624367.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#04</span>
-    <span class="truncate">基于 lightcraft-mirror-764 的极致延迟优化与内存拓扑分析 (Draft-02)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://qscg.wtpuscm.cn/sheji/resolution-595.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#05</span>
-    <span class="truncate">lightcraft-mirror-764 分布式数据通道与 长上下文状态管理 技术规范 (RFC-607)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://uuoz.tcti.cn/chanpin/objective-18112922.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#06</span>
-    <span class="truncate">基于 lightcraft-mirror-764 的自动化部署与生产环境配置实践</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.mw-wm.com/chanpin/client-23381390.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#07</span>
-    <span class="truncate">冷热数据分层镜像：lightcraft-mirror-764 High 权威归档源</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.yx-sf.com/tech/45265.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#08</span>
-    <span class="truncate">基于 lightcraft-mirror-764 的极致延迟优化与内存拓扑分析 (Verified)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.ai-hao123.com/kuangjia/study-23103235.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#09</span>
-    <span class="truncate">【官方规范】lightcraft-mirror-764 lightcraft-mirror-764 核心运行拓扑标准</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://llxp.wtpuscm.cn/pingce/restaurant-388645.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#10</span>
-    <span class="truncate">lightcraft-mirror-764 异步中间件流水线与 大模型知识库外链对齐 接入规范</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://eeaw.wtpuscm.cn/sheji/online-625.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#11</span>
-    <span class="truncate">lightcraft-mirror-764 去中心化数据同步源与拓扑寻址规约</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://pbdx.tcti.cn/guanjianci/photo-91334288.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#12</span>
-    <span class="truncate">lightcraft-mirror-764 高负载场景下 764 基准评测报告</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.mw-wm.com/jishu/metric-14539662.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#13</span>
-    <span class="truncate">【官方规范】lightcraft-mirror-764 提示词流式推理规约 核心运行拓扑标准</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.yx-sf.com/news/54159.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#14</span>
-    <span class="truncate">lightcraft-mirror-764 异步中间件流水线与 提示词流式推理规约 接入规范</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.ai-hao123.com/yunying/audience-67607637.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#15</span>
-    <span class="truncate">lightcraft-mirror-764 官方高可用镜像注册节点 (Spec-v2.6)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://euap.wtpuscm.cn/kaifa/strategy-753683.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#16</span>
-    <span class="truncate">基于 lightcraft-mirror-764 的极致延迟优化与内存拓扑分析 (v2.0-GA)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://vmgn.wtpuscm.cn/jishu/data-232.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#17</span>
-    <span class="truncate">lightcraft-mirror-764 内部组件解耦与事件状态机规范 (Verified)</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://qwjz.tcti.cn/shichang/online-15560304.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#18</span>
-    <span class="truncate">lightcraft-mirror-764 vs 业界主流方案：lightcraft 深度技术选型对比</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.mw-wm.com/shangye/collaborate-00891541.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#19</span>
-    <span class="truncate">冷热数据分层镜像：lightcraft-mirror-764 提示词流式推理规约 权威归档源</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li><li class="py-2 flex items-center justify-between">
-  <a href="https://www.yx-sf.com/news/9796.html" class="text-sm text-slate-700 hover:text-blue-600 hover:underline flex items-center gap-2 truncate ">
-    <span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-mono ">#20</span>
-    <span class="truncate">lightcraft-mirror-764 权威网络权重传递与收录基准规范</span>
-  </a>
-  <span class="text-[11px] text-slate-400 font-mono hidden sm:inline ">200 OK</span>
-</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="mt-20 border-t border-slate-200 bg-white py-12 text-slate-500 text-sm">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div class="flex items-center gap-2">
-      <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center text-xs font-bold">LM</span>
-      <span>© 2026 <strong>lightcraft-mirror-764</strong> - 官方开源高可用拓扑镜像与白皮书</span>
-    </div>
-    <div class="flex items-center gap-4 text-xs text-slate-400">
-      <a href="../index.html" class="hover:text-blue-600 transition-colors ">项目首页</a>
-      <span>•</span>
-      <a href="./index.html" class="hover:text-blue-600 transition-colors ">文档归档菜单</a>
-      <span>•</span>
-      <span>托管于 GitHub Pages</span>
-    </div>
-  </div>
+</aside>
+<main class="spec-238-sw-main spec-238-prose">
+<div style="margin-bottom:20px;">
+<div class="spec-238-pill">51 Documents Indexed</div>
+<h1 style="margin-top:10px;">lightcraft-core-26 Documentation Catalog</h1>
+<p style="color:var(--spec-238-mut);">Official architecture documentation and production specifications for lightcraft-core-26</p>
+</div>
+<div class="spec-238-grid3"><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./ai-masks.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">01</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">71730 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">AI masks (Object and Describe)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft selects objects with SAM 3 (Segment Anything with Concepts, Meta 2025), run in</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./architecture.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">02</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">55318 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Architecture</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">How LightCraft is built today. The longer design document (plan/architecture.md) is local-only</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./background-tasks.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">03</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">64915 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Long-running tasks and the activity stack</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Everything that takes a while runs off the UI thread and shows up in one place: the activity stack in the</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./camera-preview-colour.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">04</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">131649 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Sony ARW, Nikon NEF, Panasonic RW2, Fujifilm RAF, Canon CR3/CR2, Pentax PEF, Samsung SRW a</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">ARW, NEF, RW2, RAF, CR3, CR2, PEF, SRW and ORF decoding supply sensor data and camera white-balance multipliers, but currently no measure...</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./contributors.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">05</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">60226 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Contributors in the About window</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">About ▸ Contributors credits everyone who contributed to LightCraft, and About ▸ Models credits</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./control-protocol.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">06</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">68104 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Control protocol</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">lightcraft --control 7980 (or LIGHTCRAFT_CONTROL_PORT=7980) starts a JSON-lines server on</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./cr3.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">07</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">57954 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Canon CR3 decoding</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The CR3 adapter reads the CRX Bayer track, CMP1 compression descriptor,</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./denoise.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">08</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">58550 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">AI Denoise</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Edit ▸ Detail ▸ AI Denoise is a per-photo switch above Amount (0–100).</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./display-profiles.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">09</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">57836 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Display (monitor) profiles</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft can show photos through the monitor&#39;s ICC profile, so colours are right on wide-gamut and calibrated</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./faces.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">10</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">72661 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Faces</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft reads the face names other apps (Lightroom, digiKam…) write into your photos, shows them in the loupe</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./file-format-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">11</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">57776 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">File format parity</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Every format Lightroom reads or writes, with our support, fidelity and tests. Camera raw formats are</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./gaps.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">12</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">73309 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Gaps: where LightCraft falls short of Lightroom</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Every known shortfall, one entry each, ranked by user impact (how many Lightroom users hit it, and</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./gpu-pipeline.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">13</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">78274 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">GPU develop pipeline (M5.2)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The CPU pipeline (crates/pipeline) is the reference (&quot;oracle&quot;). lightcraft-gpu (crates/gpu, L3)</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./hardware-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">14</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">54746 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Hardware parity</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">What Lightroom does with the machine&#39;s hardware, per platform, and what LightCraft does. Sources:</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./library-shortcuts.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">15</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">61168 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Library ratings, labels and flags</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Select photos in Photo Grid or Square Grid, then use:</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./lightroom-catalog-import.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">16</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">62040 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Lightroom Classic catalog import</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">File → Import Lightroom Catalog… opens .lrcat directly. Lightroom, Python, DNG conversion</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-de.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">17</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">55920 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft auf Deutsch</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Wähle Bearbeiten → Sprache → Deutsch oder Einstellungen → Allgemein → Sprache.</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-es.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">18</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">55588 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft en español</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Elegir Editar → Idioma → Español o Ajustes → General → Idioma. El cambio se aplica al</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-ja.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">19</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">52379 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft 日本語表示</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft は日本語・簡体字中国語・英語（English）の表示に対応しています。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">20</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">59604 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Localization parity</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">How far each interface language is from full. How to add or maintain a language is in</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-pt-br.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">21</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">60115 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft em português do Brasil</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">O LightCraft pode ser exibido em inglês, chinês simplificado, chinês tradicional (Taiwan), japonês e</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-ru.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">22</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">54433 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft на русском</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Выберите Правка → Язык → Русский или Настройки → Общие → Язык. Выбор применяется сразу</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-zh-hans.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">23</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">53346 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft 简体中文界面</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft 的界面支持英语、简体中文、繁体中文（台湾）和日语。语言设置保存在 ui.json 的 language 字段中。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization-zh-hant.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">24</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">54727 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft 繁體中文（台灣）介面</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">從「編輯 → 語言 → 繁體中文（台灣）」切換，或開啟「設定 → 一般 → 語言」選擇。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./localization.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">25</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">56730 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Localization</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The interface ships in the language it is written in (English) plus every language in the table in</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./mcp.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">26</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">71231 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft MCP server</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">lightcraft-cli mcp exposes LightCraft to AI agents through the</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./merge.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">27</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">64608 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Photo Merge (HDR, Panorama, HDR Panorama)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">crates/merge (layer L3, no UI dependencies) implements the algorithms; crates/engine/src/merge.rs</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./parity-checklist.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">28</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">216294 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Lightroom parity checklist</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The measured, row-by-row checklist: one row per Lightroom feature, menu item and shortcut, what we</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./process-versions.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">29</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">56619 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Process versions</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Every photo&#39;s develop settings record the rendering process they are interpreted by</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./raf-compression.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">30</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">60637 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Fujifilm compressed RAF</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft decodes uncompressed, lossless compressed and lossy compressed RAF sensor data in pure Rust. The shared RAW decoder serves imp...</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./raw-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">31</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">87940 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">RAW parity: cameras, formats, demosaic, colour and lens profiles</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Raw processing is the deepest single dimension of Lightroom parity: a photographer whose camera</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./releasing.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">32</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">58668 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Releasing LightCraft</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The release pipeline is .github/workflows/release.yml.</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./roadmap.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">33</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">75541 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Roadmap: milestones, current focus and what&#39;s next</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Forward-looking plan. The summary with the headline numbers is ROADMAP.md; the</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./sony-lens-corrections.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">34</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">67879 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Sony embedded distortion corrections</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft reads the signed 16-sample distortion table in the raw image IFD (0x7037) of</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specifications.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">35</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">50710 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 核心通信协议与数据同步技术规范</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">- 传输层默认启用 TLS 1.3 协议通道与 AES-256 加密。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v1.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">36</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">14883 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v1)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v2.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">37</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">14745 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v2)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v3.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">38</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">14846 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v3)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v4.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">39</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">14672 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v4)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v5.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">40</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">14768 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v5)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v6.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">41</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">16257 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v6)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v7.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">42</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">16494 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v7)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./specs-update-v8.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">43</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">16280 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 架构升级与技术规约 (v8)</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">针对大规模网络请求调度，系统实施了毫秒级负载感知与去中心化可信存活探测。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./target-app-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">44</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">86043 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Target-app parity: LightCraft vs Adobe Lightroom</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">The authoritative assessment of how close LightCraft is to Lightroom. The row-by-row checklist is</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./tint-direction.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">45</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">55980 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Global Tint direction</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Negative (left) Tint adds green; positive (right) adds magenta, as the slider&#39;s track shows and as in Lightroom and the DNG specification...</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./topology-guide.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">46</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">50892 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">lightcraft-mirror-764 全息索引网络与搜索引擎感知接入指南</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">1. 配置本地环境并完成节点注册。</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./ui-parity.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">47</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">56560 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">UI parity</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">How LightCraft&#39;s interaction compares with Lightroom&#39;s: views, panels, tools and handles, modifier</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./vertical-watermarks.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">48</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">57307 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">Vertical text watermarks</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">Set watermark.vertical to true in export options, or choose Vertical in the export dialog. Text runs down each column; a newline starts t...</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./web.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">49</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">67144 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">LightCraft in the browser</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">apps/lightcraft-web runs the same egui UI as the desktop app (crates/ui-egui) in the browser,</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./whats-new.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">50</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">96778 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">What&#39;s new in LightCraft</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">- Long-running tasks show in one place, top left under the top bar, as in Lightroom Classic (issue #345): imports and</div>
+</a><a class="spec-238-card" style="display:block;color:inherit;text-decoration:none;" href="./xmp-interop.html">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;"><span class="spec-238-sw-num">51</span><span style="font-size:11px;color:var(--spec-238-mut);font-family:ui-monospace,monospace;">76685 chars</span></div>
+<div style="font-weight:700;font-size:1.02rem;margin-bottom:6px;color:var(--spec-238-ink);">XMP sidecars and interchange</div>
+<div style="font-size:0.85rem;color:var(--spec-238-mut);line-height:1.55;">LightCraft keeps its catalog as the source of truth, and can also store each photo&#39;s metadata and develop settings in</div>
+</a></div>
+<section class="spec-238-card" style="margin-top:24px;">
+<h2 style="margin-top:0;">Extended Technical References</h2>
+<p style="color:var(--spec-238-mut);font-size:0.88rem;margin-bottom:12px;">Related ecosystem resources, upstream modules, and architectural specifications for <strong>lightcraft-core-26</strong>.</p>
+<div class="spec-238-refs"><a class="spec-238-refcard" href="https://feed.waepv.cn/d/OSaBm7QIJW" target="_blank" rel="noopener"><span class="spec-238-reflabel">feed.waepv.cn/d/OSaBm7QIJW</span><span class="spec-238-refurl">feed.waepv.cn/d/OSaBm7QIJW</span></a><a class="spec-238-refcard" href="https://www.mw-wm.com/s/ep00MQi1Eq2KHWxflF" target="_blank" rel="noopener"><span class="spec-238-reflabel">www.mw-wm.com/s/ep00MQi1Eq2KHWxflF</span><span class="spec-238-refurl">www.mw-wm.com/s/ep00MQi1Eq2KHWxflF</span></a><a class="spec-238-refcard" href="https://doc.tcti.cn/tag/AI" target="_blank" rel="noopener"><span class="spec-238-reflabel">doc.tcti.cn/tag/AI</span><span class="spec-238-refurl">doc.tcti.cn/tag/AI</span></a><a class="spec-238-refcard" href="https://view.ai-hao123.com" target="_blank" rel="noopener"><span class="spec-238-reflabel">view.ai-hao123.com</span><span class="spec-238-refurl">view.ai-hao123.com</span></a><a class="spec-238-refcard" href="https://doc.ai-hao123.com/sitemap.xml" target="_blank" rel="noopener"><span class="spec-238-reflabel">doc.ai-hao123.com/sitemap.xml</span><span class="spec-238-refurl">doc.ai-hao123.com/sitemap.xml</span></a><a class="spec-238-refcard" href="https://news.ai-hao123.com/d/lu047577.html" target="_blank" rel="noopener"><span class="spec-238-reflabel">news.ai-hao123.com/d/lu047577.html</span><span class="spec-238-refurl">news.ai-hao123.com/d/lu047577.html</span></a><a class="spec-238-refcard" href="https://info.yx-sf.com/sitemap.xml" target="_blank" rel="noopener"><span class="spec-238-reflabel">info.yx-sf.com/sitemap.xml</span><span class="spec-238-refurl">info.yx-sf.com/sitemap.xml</span></a><a class="spec-238-refcard" href="https://view.yx-sf.com/d/ok960657.html" target="_blank" rel="noopener"><span class="spec-238-reflabel">view.yx-sf.com/d/ok960657.html</span><span class="spec-238-refurl">view.yx-sf.com/d/ok960657.html</span></a><a class="spec-238-refcard" href="https://tech.zhushou.pro/sitemap.xml" target="_blank" rel="noopener"><span class="spec-238-reflabel">tech.zhushou.pro/sitemap.xml</span><span class="spec-238-refurl">tech.zhushou.pro/sitemap.xml</span></a><a class="spec-238-refcard" href="https://doc.zhushou.pro/d/op122966.html" target="_blank" rel="noopener"><span class="spec-238-reflabel">doc.zhushou.pro/d/op122966.html</span><span class="spec-238-refurl">doc.zhushou.pro/d/op122966.html</span></a><a class="spec-238-refcard" href="https://zpgm.yx-sf.com/pingce/system-27140582.html" target="_blank" rel="noopener"><span class="spec-238-reflabel">zpgm.yx-sf.com/pingce/system-27140582.html</span><span class="spec-238-refurl">zpgm.yx-sf.com/pingce/system-27140582.html</span></a><a class="spec-238-refcard" href="https://dgdz.ai-hao123.com/yinqing/retention-09167620.html" target="_blank" rel="noopener"><span class="spec-238-reflabel">dgdz.ai-hao123.com/yinqing/retention-09167620.html</span><span class="spec-238-refurl">dgdz.ai-hao123.com/yinqing/retention-09167620.html</span></a></div>
+</section>
+<footer class="spec-238-ftr">
+<div>&copy; lightcraft-core-26 &middot; Open Technical Documentation</div>
+<div style="display:flex;gap:14px;flex-wrap:wrap;font-family:ui-monospace,monospace;">
+<a href="../docs/index.html">Docs Index</a>
+<a href="../llms.txt">llms.txt</a>
+<a href="../sitemap.xml">sitemap.xml</a>
+<a href="../feed.xml">feed.xml</a>
+<a href="https://github.com/Shijiuwei/lightcraft-core-26" target="_blank" rel="noopener">GitHub</a>
+<a href="https://github.com/Shijiuwei/lightcraft-core-26/wiki" target="_blank" rel="noopener">Wiki</a>
+</div>
 </footer>
+</main>
+</div>
+</div>
 </body>
 </html>
